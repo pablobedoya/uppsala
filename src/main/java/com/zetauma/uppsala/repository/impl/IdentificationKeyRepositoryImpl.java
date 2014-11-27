@@ -1,5 +1,6 @@
 package com.zetauma.uppsala.repository.impl;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,8 +28,8 @@ public class IdentificationKeyRepositoryImpl implements IdentificationKeyReposit
 		return mongoTemplate.findAll(IdentificationKey.class, COLLECTION_NAME);
 	}
 	
-	public IdentificationKey findIdentificationKeyById(IdentificationKey idKey) {
-		Criteria criteria = Criteria.where("id").is(idKey.getId());
+	public IdentificationKey findIdentificationKeyById(BigDecimal id) {
+		Criteria criteria = Criteria.where("id").is(id);
 		Query query = new Query(criteria);
 		return mongoTemplate.findOne(query, IdentificationKey.class, COLLECTION_NAME);
 	}

@@ -28,4 +28,6 @@
 
 	<!-- Use this post processor to translate any MongoExceptions thrown in @Repository annotated classes -->
 	<bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
+	
+	<bean id="idKeyRepository" class="com.zetauma.uppsala.repository.impl.IdentificationKeyRepositoryImpl" />
 </beans>

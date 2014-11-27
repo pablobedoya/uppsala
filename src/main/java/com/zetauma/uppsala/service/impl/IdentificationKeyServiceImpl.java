@@ -1,5 +1,6 @@
 package com.zetauma.uppsala.service.impl;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,29 +14,39 @@ import com.zetauma.uppsala.service.IdentificationKeyService;
 public class IdentificationKeyServiceImpl implements IdentificationKeyService {
 	@Autowired
 	private IdentificationKeyRepository idKeyRepository;
+
+	public IdentificationKeyRepository getIdentificationKeyRepository() {
+		return idKeyRepository;
+	}
 	
+	public void setIdentificationKeyRepository(IdentificationKeyRepository idKeyRepository) {
+		this.idKeyRepository = idKeyRepository;
+	}
+	
+	@Override
 	public boolean insertIdentificationKey(IdentificationKey idKey) {
-		// TODO Auto-generated method stub
 		idKeyRepository.insertIdentificationKey(idKey);
 		return false;
 	}
 
-	public List<IdentificationKey> findAllIdentificationKeys(IdentificationKey idKey) {
+	@Override
+	public List<IdentificationKey> getFindAllIdentificationKeys(IdentificationKey idKey) {
 		return idKeyRepository.findAllIdentificationKeys(idKey);
 	}
 
-	public IdentificationKey findIdentificationKeyById(IdentificationKey idKey) {
-		return idKeyRepository.findIdentificationKeyById(idKey);
+	@Override
+	public IdentificationKey getFindIdentificationKeyById(BigDecimal id) {
+		return idKeyRepository.findIdentificationKeyById(id);
 	}
 
-	public boolean updateIdentificationKey(IdentificationKey oldIdKey, IdentificationKey newIdKey) {
-		// TODO Auto-generated method stub
+	@Override
+	public boolean getUpdateIdentificationKey(IdentificationKey oldIdKey, IdentificationKey newIdKey) {
 		idKeyRepository.updateIdentificationKey(oldIdKey, newIdKey);
 		return false;
 	}
 
-	public boolean removeIdentificationKey(IdentificationKey idKey) {
-		// TODO Auto-generated method stub
+	@Override
+	public boolean getRemoveIdentificationKey(IdentificationKey idKey) {
 		idKeyRepository.removeIdentificationKey(idKey);
 		return false;
 	}

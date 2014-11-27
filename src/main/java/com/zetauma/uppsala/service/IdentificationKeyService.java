@@ -1,5 +1,6 @@
 package com.zetauma.uppsala.service;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import com.zetauma.uppsala.model.IdentificationKey;
@@ -7,11 +8,11 @@ import com.zetauma.uppsala.model.IdentificationKey;
 public interface IdentificationKeyService {
 	public boolean insertIdentificationKey(IdentificationKey idKey);
 	
-	public List<IdentificationKey> findAllIdentificationKeys(IdentificationKey idKey);
+	public List<IdentificationKey> getFindAllIdentificationKeys(IdentificationKey idKey);
 	
-	public IdentificationKey findIdentificationKeyById(IdentificationKey idKey);
+	public IdentificationKey getFindIdentificationKeyById(BigDecimal id);
 	
-	public boolean updateIdentificationKey(IdentificationKey oldIdKey, IdentificationKey newIdKey);
+	public boolean getUpdateIdentificationKey(IdentificationKey oldIdKey, IdentificationKey newIdKey);
 	
-	public boolean removeIdentificationKey(IdentificationKey idKey);
+	public boolean getRemoveIdentificationKey(IdentificationKey idKey);
 }
